@@ -2,7 +2,7 @@
   <div>
         <ul class="languages">
           <li v-for="language in languages" 
-          v-on:click="onSelect(language,$event)"
+          v-on:click="updateLanguage(language,$event)"
           v-bind:style="{ color : (language === selectedLanguage) ? '#d0021b' : null }">
           {{language}}
           </li>
@@ -16,6 +16,11 @@ export default {
   data () {
     return {
       languages: ['All','JavaScript','Ruby','Java','CSS','Python']
+    }
+  },
+  methods : {
+    updateLanguage : function (language,event) {
+      this.onSelect(language,event)
     }
   },
   props : {
