@@ -1,6 +1,6 @@
 # vue-battle
 
-> A Vue.js project
+> A Vue.js project, Vue version of the App build in React Fundamentals online course by Tyler McGinnis.
 
 ## Build Setup
 
