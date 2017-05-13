@@ -2,7 +2,7 @@
   "name": "vue-battle",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Nuwan Chandrasoma <nuwan.chandrasoma@gtnexus.com>",
+  "author": "Nuwan Chandrasoma",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
