@@ -1,9 +1,20 @@
 <template>
+<div>
 <div class='row'>
   <player-input id="playerOne" label="Player One" :onSubmit="handleSumbit" v-if="!playerOneName"/>
-  <player-preview id="playerOne" :avatar="playerOneImage" :username="playerOneName" :onReset="handleReset" v-if="playerOneImage !== null"/>
+  <player-preview :avatar="playerOneImage" :username="playerOneName" v-if="playerOneImage !== null">
+  <button class='reset' v-on:click="handleReset('playerOne')">Reset</button>
+  </player-preview>
   <player-input id="playerTwo" label="Player Two" :onSubmit="handleSumbit" v-if="!playerTwoName"/>
-  <player-preview id="playerTwo" :avatar="playerTwoImage" :username="playerTwoName" :onReset="handleReset" v-if="playerTwoImage !== null"/>
+  <player-preview :avatar="playerTwoImage" :username="playerTwoName"  v-if="playerTwoImage !== null">
+  <button class='reset' v-on:click="handleReset('playerTwo')">Reset</button>
+  </player-preview>
+</div>
+<div class='row'>
+  <router-link :to="queryString" class="button" v-if="playerOneImage !== null && playerTwoImage!== null">
+    Battle
+  </router-link>
+</div>
 </div>
 </template>
 
@@ -19,6 +30,11 @@ export default {
       playerTwoName : '',
       playerOneImage : null,
       playerTwoImage : null
+    }
+  },
+  computed: { 
+    queryString : function () {
+      return '/battle/results?playerOneName='+this.playerOneName+'&playerTwoName='+this.playerTwoName;
     }
   },
   methods : {

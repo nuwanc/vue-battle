@@ -6,7 +6,7 @@
             </router-link>
             </li>
             <li>
-            <router-link to="/battle">
+            <router-link exact to="/battle">
                 Battle
             </router-link>
             </li>

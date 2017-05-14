@@ -5,7 +5,7 @@
   <repo-grid :repos="repos"></repo-grid>
   </template>
   <template v-else>
-  <div>Loading....</div>
+  <loading/>
   </template>
 </div>
 </template>
@@ -13,6 +13,7 @@
 <script>
 import SelectLanguage from '@/components/SelectLanguage'
 import RepoGrid from '@/components/RepoGrid'
+import Loading from '@/components/Loading'
 import * as api from '@/utils/api'
 
 export default {
@@ -34,7 +35,8 @@ export default {
   },
   components : {
     SelectLanguage,
-    RepoGrid
+    RepoGrid,
+    Loading
   },
   mounted: function () {
     this.updateLanguage(this.selectedLanguage);
